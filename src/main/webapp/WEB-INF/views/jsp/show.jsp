@@ -17,31 +17,31 @@
 </head>
 
 <body>
+<p>The show page</p>
 
 <div class="container">
 
         <table class="table table-striped">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>DOB</th>
+            <th>Details</th>
           <td>  <button class="btn btn-primary" onclick="location.href='/home'">GO BACK</button>
             <th>Breed</th>
             </td>
         </tr>
         </thead class="thead-dark">
-        <c:forEach items="${message}" var="show">
+        <c:forEach items="${message}" var="result" varStatus="loop">
                     <tr>
-                       		<td>${show._id}</td>
-                    		<td>${show.name}</td>
-                    		<td>${show.dob}</td>
-                    		<td>${show.details}</td>
+
+                    		<td>${result.name}</td>
+                    		<td>${result.dob}</td>
+                    		<td>${result.details}</td>
 
                     		<td>
-
-                                 <button class="btn btn-danger" onclick="location.href='/movieweb/delete-actor?id=${show._id}'">Delete</button>
-                             </td>
+                                 <button class="btn btn-danger" onclick="location.href='/movieweb/delete-actor?id=${result._id}'">Delete</button>
+                            </td>
                     </tr>
 
         </c:forEach>
@@ -66,3 +66,6 @@
 
 </body>
 </html>
+
+
+

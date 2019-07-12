@@ -13,7 +13,9 @@
 <spring:url value="/resources/core.css/bootstrap.min.css" var="bootstrapCss" />
 <link href="${bootstrapCss}" rel="stylesheet" />
 <link href="${coreCss}" rel="stylesheet" />
+
 </head>
+
 <body>
 
 
@@ -21,16 +23,16 @@
         <form:form class="form-horizontal" method="post" modelAttribute="message" action="/movieweb/actors/add">
            <div class="form-row">
             <div class="col-md-4 mb-3">
-            <label class="col-sm-1 control-label">Name</label>
-            <form:input path="name" class="form-control" type="text"/></br>
+                <label class="col-sm-1 control-label">Name</label>
+                <form:input path="name" class="form-control" type="text"/></br>
             </div>
-           <div class="col-md-4 mb-3">
-            <label class="col-sm-1 control-label">Date_Of_Bith</label>
-            <form:input path="dob" class="form-control" type="text"/></br>
+            <div class="col-md-4 mb-3">
+                <label class="col-sm-1 control-label">Date_Of_Bith</label>
+                <form:input path="dob" class="form-control" type="text"/></br>
             </div>
-           <div class="col-md-4 mb-3">
-            <label class="col-sm-1 control-label">Details</label>
-            <form:input path="details" class="form-control" type="text"/></br>
+            <div class="col-md-4 mb-3">
+                <label class="col-sm-1 control-label">Details</label>
+                <form:input path="details" class="form-control" type="text"/></br>
             </div>
           </div>
              <button type="submit" class="btn btn-primary " >Submit</button>

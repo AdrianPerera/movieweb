@@ -20,7 +20,7 @@ public class ActorsController {
     public String gotoHome(ModelMap model){
         String s1= "This is sent by the ActorsController";
         model.addAttribute("message",s1);
-        return "home";
+        return "home";                //returns to the home page
     }
 
 
@@ -42,21 +42,16 @@ public class ActorsController {
 
         //restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
-        Actors addac = restTemplate.postForObject("http://localhost:8081/actors",obj, Actors.class);
+       // Actors addac = restTemplate.postForObject("http://localhost:8081/actors",obj, Actors.class);
         //sending the data to the API with postForObject
-        Actors[] s1 = restTemplate.getForObject("http://localhost:8081/actors/get-all", Actors[].class);
+        //Actors[] s1 = restTemplate.getForObject("http://localhost:8081/actors/get-all", Actors[].class);
 
-        model.addAttribute("message", s1);		//Gets the message in to the model
+//        model.addAttribute("message", obj);		//Gets the message in to the model
+        model.addAttribute("message");
         return "show";
 
     }
-    	@RequestMapping (value ="/get-all" , method = RequestMethod.GET)
-	    public String viewActorsPage(Model model) {
-            Object actors = restTemplate.getForObject("http://localhost:8081/actors/all", Actors[].class);
-            model.addAttribute("message", actors);
-            return "show";
 
-    }
 //
 //    @RequestMapping (value = "delete-actor", method = RequestMethod.GET)
 //    public String deletePet(@RequestParam ("id") String id, Model model){

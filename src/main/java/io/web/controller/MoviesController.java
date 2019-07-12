@@ -21,12 +21,17 @@ public class MoviesController {
         return "home";
     }
 
+    @RequestMapping (value = "/movieForm",method=RequestMethod.GET)
+    public String addMovie(ModelMap model){
+
+        model.addAttribute("message",new Movies()); //sending an empty object to the /movieForm
+        return "movieForm";
+    }
+
+
+
 
 }
-
-
-
-
 
 
 
