@@ -68,6 +68,19 @@ public class Movie{
     public void setImgurl(String imgurl) {
         this.imgurl = imgurl;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "_id='" + _id + '\'' +
+                ", name='" + name + '\'' +
+                ", year=" + year +
+                ", genere='" + genere + '\'' +
+                ", actorsnames=" + actorsnames +
+                ", description='" + description + '\'' +
+                ", imgurl='" + imgurl + '\'' +
+                '}';
+    }
 }
 
 

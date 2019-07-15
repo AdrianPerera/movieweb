@@ -17,7 +17,7 @@
 
  <nav class="navbar navbar-default">
          <div class="container-fluid">
-                <button class="btn btn-primary" onclick="location.href='/movieweb/movie/home'">HOME</button>
+                <button class="btn btn-dark" onclick="location.href='/movieweb/movie/home'">HOME</button>
          </div>
  </nav>
 
@@ -27,7 +27,7 @@
 <body>
 
     <div class="container">
-        <form:form class="form-horizontal" method="post" modelAttribute="message" action="/movieweb/movie/add">
+        <form:form class="form-horizontal" method="post" modelAttribute="movie" action="/movieweb/movie/add">
            <div class="form-row">
                 <div >
                     <label class="col-sm-1 control-label">Name</label>
@@ -39,8 +39,10 @@
                 </div>
                 <div>
                     <label class="col-sm-1 control-label">Genere</label>
-                    <form:input path="genere" class="form-control" type="text"/></br>
+                    <form:input path="genre" class="form-control" type="text"/></br>
                 </div>
+
+
                 <div>
                     <label class="col-sm-1 control-label">description</label>
                     <form:input path="description" class="form-control" type="text"/></br>
@@ -61,7 +63,7 @@
 
     </div>
 
-
+<p>${actorList}</p>
 
 <spring:url value="/resources/core.js/hello.js" var="coreJs" />
 <spring:url value="/resources/core.js/bootstrap.min.js" var="bootstrapJs" />

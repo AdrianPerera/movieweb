@@ -18,7 +18,7 @@
 
 <nav class="navbar navbar-fixed-bottom">
          <div class="container-fluid">
-                <button class="btn btn-primary" onclick="location.href='/movieweb/actor/home'">HOME</button>
+                <button class="btn btn-dark" onclick="location.href='/movieweb/actor/home'">HOME</button>
          </div>
 </nav>
 
@@ -29,7 +29,8 @@
 <p>${message}</p>
 
   <div class="container">
-        <form:form class="form-horizontal" method="post" modelAttribute="message" action="/movieweb/actor/edit?id=${message._id}">
+        <form:form class="form-horizontal" method="post" modelAttribute="message" action="/movieweb/actor/edit">
+           <form:input path="id" class="form-control" type="hidden"/></br>
            <div class="form-row">
             <div class="col-md-4 ">
                 <label class="col-sm-1 control-label">Name</label>
@@ -44,11 +45,11 @@
                 <form:input path="details" class="form-control" type="text"/></br>
             </div>
           </div>
-             <button type="submit" class="btn btn-primary" >Edit Save</button>
+             <button type="submit" class="btn btn-success" >Edit Save</button>
         </form:form>
     </div>
 
-<p>${message._id}</p
+<p>${message.id}</p
 
 
 

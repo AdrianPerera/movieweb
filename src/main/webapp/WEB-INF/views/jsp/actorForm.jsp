@@ -17,7 +17,7 @@
 
   <nav class="navbar navbar-default">
          <div class="container-fluid">
-                <button class="btn btn-primary" onclick="location.href='/movieweb/actor/home'">HOME</button>
+                <button class="btn btn-dark" onclick="location.href='/movieweb/actor/home'">HOME</button>
          </div>
    </nav>
 
