@@ -1,6 +1,6 @@
 package io.web.controller;
 
-import domain.Movies;
+import domain.Movie;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 @Controller
-@RequestMapping("/movies")
+@RequestMapping("/movie")
 public class MoviesController {
 
     RestTemplate restTemplate = new RestTemplate();
@@ -24,7 +24,7 @@ public class MoviesController {
     @RequestMapping (value = "/movieForm",method=RequestMethod.GET)
     public String addMovie(ModelMap model){
 
-        model.addAttribute("message",new Movies()); //sending an empty object to the /movieForm
+        model.addAttribute("message",new Movie()); //sending an empty object to the /movieForm
         return "movieForm";
     }
 

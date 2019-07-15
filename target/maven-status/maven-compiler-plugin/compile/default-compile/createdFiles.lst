@@ -1,4 +1,4 @@
+domain/Actor.class
 io/web/controller/MoviesController.class
-domain/Actors.class
-domain/Movies.class
+domain/Movie.class
 io/web/controller/ActorsController.class

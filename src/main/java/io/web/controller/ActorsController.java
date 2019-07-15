@@ -1,7 +1,6 @@
 package io.web.controller;
 
-
-import domain.Actors;
+import domain.Actor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -11,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 @Controller
-@RequestMapping("/actors")
+@RequestMapping("/actor")
 public class ActorsController {
 
     RestTemplate restTemplate = new RestTemplate();
@@ -27,41 +26,68 @@ public class ActorsController {
     @RequestMapping (value = "/actorForm",method=RequestMethod.GET)
     public String addActor(ModelMap model){
 
-        model.addAttribute("message",new Actors()); //sending an empty object to the /actorForm
+        model.addAttribute("message",new Actor()); //sending an empty object to the /actorForm
         return "actorForm";
     }
 
     //Coming back to the controller from actorForm
     @RequestMapping(value="/add", method=RequestMethod.POST)
-    public String actorsformSubmit(@ModelAttribute("message") Actors actors, Model model)  {
+    public String actorsformSubmit(@ModelAttribute("message") Actor actors, Model model)  {
 
-        Actors obj= new Actors();					//calling a new object for pet called obj
+        Actor obj= new Actor();					//calling a new object for pet called obj
         obj.setName(actors.getName());				//Setting all data to the Actors object obj
         obj.setDob(actors.getDob());
         obj.setDetails(actors.getDetails());
 
         //restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
-       // Actors addac = restTemplate.postForObject("http://localhost:8081/actors",obj, Actors.class);
+        Actor addac = restTemplate.postForObject("http://localhost:8081/actor/",obj, Actor.class);
         //sending the data to the API with postForObject
-        //Actors[] s1 = restTemplate.getForObject("http://localhost:8081/actors/get-all", Actors[].class);
+        Actor[] s1 = restTemplate.getForObject("http://localhost:8081/actor/", Actor[].class);
 
-//        model.addAttribute("message", obj);		//Gets the message in to the model
-        model.addAttribute("message");
+        model.addAttribute("message",s1);
         return "show";
 
     }
 
-//
-//    @RequestMapping (value = "delete-actor", method = RequestMethod.GET)
-//    public String deletePet(@RequestParam ("id") String id, Model model){
-//        String uri="http://localhost:8081/actors/"+id;
-//        restTemplate.delete(uri);  //this will send the url to the API to delete
-//
-//        Object	pets= restTemplate.getForObject("http://localhost:8081/actors/all", Actors[].class);
-//        model.addAttribute("message",pets);
-//        return "result";
 
+        @RequestMapping (value = "delete-actor", method = RequestMethod.GET)
+        public String deleteActor(@RequestParam ("id") String id, Model model) {
+            String uri = "http://localhost:8081/actor/" + id;
+            restTemplate.delete(uri);  //this will send the url to the API to delete
+
+            Actor[] s1 = restTemplate.getForObject("http://localhost:8081/actor/", Actor[].class); //calling getall
+
+            model.addAttribute("message", s1);
+            return "show";
+        }
+
+        @RequestMapping (value = "update-actor", method = RequestMethod.GET)
+        public String updateActor(@RequestParam ("id") String id, Model model) {
+            String uri = "http://localhost:8081/actor/get/" + id;
+
+            Actor s1 = restTemplate.getForObject(uri, Actor.class); //recruiting the info of respective id from database
+
+            model.addAttribute("message", s1);
+            return "updateActor";                       //sending the data to update form to update
+        }
+
+        @RequestMapping (value = "edit", method = RequestMethod.POST)  //Saving the updated info
+        public String editsave(@ModelAttribute("message") Actor actor, @RequestParam ("id") String id, Model model){
+        String upuri="http://localhost:8081/actor/" + id ;
+        Actor  obj=new Actor();
+        obj.setName(actor.getName());
+        obj.setDob(actor.getDob());
+        obj.setDetails(actor.getDetails());
+
+        restTemplate.put(upuri,obj);    //sending data to the put
+
+        Actor[] s1 = restTemplate.getForObject("http://localhost:8081/actor/", Actor[].class);
+
+        model.addAttribute("message",s1);
+        return "show";
+
+        }
 
 }
 

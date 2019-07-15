@@ -14,38 +14,52 @@
 <link href="${bootstrapCss}" rel="stylesheet" />
 <link href="${coreCss}" rel="stylesheet" />
 
+
+ <nav class="navbar navbar-default">
+         <div class="container-fluid">
+                <button class="btn btn-primary" onclick="location.href='/movieweb/movie/home'">HOME</button>
+         </div>
+ </nav>
+
+
 </head>
 
 <body>
 
     <div class="container">
-        <form:form class="form-horizontal" method="post" modelAttribute="message" action="/movieweb/movies/add">
+        <form:form class="form-horizontal" method="post" modelAttribute="message" action="/movieweb/movie/add">
            <div class="form-row">
-                <div class="col-md-4">
+                <div >
                     <label class="col-sm-1 control-label">Name</label>
                     <form:input path="name" class="form-control" type="text"/></br>
                 </div>
-                <div class="col-md-4">
+                <div>
                      <label class="col-sm-1 control-label">Year</label>
                      <form:input path="year" class="form-control" type="integer" placeholder="1996"/></br>
                 </div>
-                <div class="col-md-4">
+                <div>
                     <label class="col-sm-1 control-label">Genere</label>
                     <form:input path="genere" class="form-control" type="text"/></br>
                 </div>
-                <div class="col-md-4">
+                <div>
                     <label class="col-sm-1 control-label">description</label>
                     <form:input path="description" class="form-control" type="text"/></br>
                 </div>
-                <div class="col-md-4">
+                <div>
                     <label class="col-sm-1 control-label">Image_URL</label>
                     <form:input path="imgurl" class="form-control" type="text"/></br>
                 </div>
+                <div>
+                 <button type="submit" class="btn btn-primary " >Submit</button>
+                <div>
             </div>
-                <button type="submit" class="btn btn-primary " >Submit</button>
-        </form:form>
-    </div>
 
+
+
+
+        </form:form>
+
+    </div>
 
 
 
@@ -60,3 +74,4 @@
 
 </body>
 </html>
+

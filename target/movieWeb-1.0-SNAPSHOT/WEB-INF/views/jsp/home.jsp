@@ -15,62 +15,57 @@
 
 
 <h1><b>
-MovieWeb Home Page
+MovieWeb Home Page  </p>${message}</p>
 </b></h1>
 
 </head>
 
+    <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
 
-      <a class="navbar-brand" href="#1">MOVIES</a>
+               <div class="tab">
 
-   </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#2">ACTORS <span class="sr-only">(current)</span></a></li>
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">SEARCH</button>
-      </form>
-
-      </ul>
+                     <button class="tablinks" onclick="openCity(event, 'Movies')">MOVIES</button>
+                     <button class="tablinks" onclick="openCity(event, 'Actors')">ACTORS</button>
+               </div>
 
 
-    </div><!-- /.navbar-collapse -->
+               <form class="navbar-form navbar-right" role="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                    <button type="submit" class="btn btn-default">SEARCH</button>
+               </form>
 
-  </div><!-- /.container-fluid -->
+            </div><!-- /.navbar-collapse -->
 
-</nav>
+          </div><!-- /.container-fluid -->
 
-            <button class="btn btn-primary" onclick="location.href='/movieweb/movies/movieForm'">ADD MOVIES</button>
-            <button class="btn btn-primary" onclick="location.href='/movieweb/actors/actorForm'">ADD ACTORS</button>
+        </nav>
 
 
 
 
-</p>${message}</p>
+  <div id="Movies" class="tabcontent">
+      <h3>_MOVIES_</h3>
+      <p>This page has the CONTENT OF movies</p>
+  </div>
 
 
+  <div id="Actors" class="tabcontent">
+    <h3>_ACTORS_</h3>
+    <p>This page is about the actors</p>
+  </div>
 
-<body>
-
-
-
-
-
-
-
+    <nav class="navbar navbar-fixed-bottom">
+         <div class="container-fluid">
+                <button class="btn btn-primary" onclick="location.href='/movieweb/movie/movieForm'">ADD MOVIES</button>
+                <button class="btn btn-primary" onclick="location.href='/movieweb/actor/actorForm'">ADD ACTORS</button>
+         </div>
+    </nav>
 
 
 <spring:url value="/resources/core.js/hello.js" var="coreJs" />
@@ -79,10 +74,13 @@ MovieWeb Home Page
 <script src="${bootstrapJs}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
+
 </body>
 
 
 
 </html>
+
+
 
 

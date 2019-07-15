@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Maven + Spring MVC</title>
+<title>Results page</title>
 
 <spring:url value="/resources/core.css/hello.css" var="coreCss" />
 <spring:url value="/resources/core.css/bootstrap.min.css" var="bootstrapCss" />
@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
 <p>The show page</p>
 
 <div class="container">
@@ -24,27 +25,34 @@
         <table class="table table-striped">
         <thead>
         <tr>
+
+            <th>ID</th>
             <th>Name</th>
             <th>DOB</th>
             <th>Details</th>
-          <td>  <button class="btn btn-primary" onclick="location.href='/home'">GO BACK</button>
-            <th>Breed</th>
+            <td>  <button class="btn btn-secondary" onclick="location.href='/movieweb/actor/actorForm'">GO BACK</button>
+            <td>  <button class="btn btn-primary" onclick="location.href='/movieweb/actor/home'">HOME</button>
             </td>
         </tr>
         </thead class="thead-dark">
-        <c:forEach items="${message}" var="result" varStatus="loop">
-                    <tr>
+<p>${message}</p>
+           <c:forEach items="${message}" var="mes">
+                <tr>
+                        <td>${mes._id}</td>
+                        <td>${mes.name}</td>
+                        <td>${mes.dob}</td>
+                        <td>${mes.details}</td>
 
-                    		<td>${result.name}</td>
-                    		<td>${result.dob}</td>
-                    		<td>${result.details}</td>
+                        <td>
 
-                    		<td>
-                                 <button class="btn btn-danger" onclick="location.href='/movieweb/delete-actor?id=${result._id}'">Delete</button>
-                            </td>
-                    </tr>
+                            <button class="btn btn-danger" onclick="location.href='/movieweb/actor/delete-actor?id=${mes._id}'">Delete</button>
+                            <button class="btn btn-secondary" onclick="location.href='/movieweb/actor/update-actor?id=${mes._id}'">Edit</button>
 
-        </c:forEach>
+                        </td>
+                </tr>
+
+           </c:forEach>
+
 
 
         </table>
@@ -52,10 +60,6 @@
 
 
 </div>
-
-
-
-
 
 
 <spring:url value="/resources/core.js/hello.js" var="coreJs" />

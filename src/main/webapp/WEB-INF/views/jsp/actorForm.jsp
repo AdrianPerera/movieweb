@@ -14,23 +14,32 @@
 <link href="${bootstrapCss}" rel="stylesheet" />
 <link href="${coreCss}" rel="stylesheet" />
 
+
+  <nav class="navbar navbar-default">
+         <div class="container-fluid">
+                <button class="btn btn-primary" onclick="location.href='/movieweb/actor/home'">HOME</button>
+         </div>
+   </nav>
+
 </head>
+
+
 
 <body>
 
 
   <div class="container">
-        <form:form class="form-horizontal" method="post" modelAttribute="message" action="/movieweb/actors/add">
+        <form:form class="form-horizontal" method="post" modelAttribute="message" action="/movieweb/actor/add">
            <div class="form-row">
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 ">
                 <label class="col-sm-1 control-label">Name</label>
                 <form:input path="name" class="form-control" type="text"/></br>
             </div>
-            <div class="col-md-4 mb-3">
-                <label class="col-sm-1 control-label">Date_Of_Bith</label>
+            <div class="col-md-4 ">
+                <label class="col-sm-1 control-label">Date_Of_Birth</label>
                 <form:input path="dob" class="form-control" type="text"/></br>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 ">
                 <label class="col-sm-1 control-label">Details</label>
                 <form:input path="details" class="form-control" type="text"/></br>
             </div>
