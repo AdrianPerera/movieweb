@@ -1,12 +1,20 @@
 package io.web.controller;
 
 import domain.Actor;
+import domain.Movie;
+import facades.MovieFacade;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import ui.ActorBean;
+import ui.MovieBean;
+import ui.Moviesget;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -15,9 +23,22 @@ public class ActorsController {
 
     RestTemplate restTemplate = new RestTemplate();
 
+//    private final MovieFacade movieFacade;
+//
+//    @Autowired
+//    public ActorsController(MovieFacade movieFacade) {
+//        this.movieFacade = movieFacade;
+//    }
+
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String gotoHome(ModelMap model) {
         String s1 = "This is sent by the ActorsController";
+
+        Actor[] L1 = restTemplate.getForObject("http://localhost:8081/actor/",Actor[].class);
+        model.addAttribute("actorList",L1);
+//        model.addAttribute("movieList",movieFacade.getMovies());
+        Moviesget[] L2 = restTemplate.getForObject("http://localhost:8081/actor/", Moviesget[].class);
+        model.addAttribute("movieList",L2);
         model.addAttribute("message", s1);
         return "home";                //returns to the home page
     }
@@ -79,7 +100,7 @@ public class ActorsController {
     }
 
     @RequestMapping(value = "edit", method = RequestMethod.POST)  //Saving the updated info
-    public String editsave(@ModelAttribute("message") ActorBean actorBean, Model model) {
+    public String editActor(@ModelAttribute("message") ActorBean actorBean, Model model) {
         String upuri = "http://localhost:8081/actor/" + actorBean.getId();
 
         Actor obj = new Actor();

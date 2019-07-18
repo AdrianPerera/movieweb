@@ -1,3 +1,4 @@
+facades/MovieFacade.class
 ui/MovieBean.class
 io/web/controller/ActorsController.class
 ui/Moviesget.class

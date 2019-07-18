@@ -9,7 +9,7 @@ public class Movie{
     private String _id;
     private String name;
     private int year;
-    private String genere;
+    private String genre;
     private List<String> actorIds;
     private String description;
     private String imgurl;
@@ -38,12 +38,12 @@ public class Movie{
         this.year = year;
     }
 
-    public String getGenere() {
-        return genere;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGenere(String genere) {
-        this.genere = genere;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
     public List<String> getActorIds() {
@@ -76,7 +76,7 @@ public class Movie{
                 "_id='" + _id + '\'' +
                 ", name='" + name + '\'' +
                 ", year=" + year +
-                ", genere='" + genere + '\'' +
+                ", genre='" + genre + '\'' +
                 ", actorsnames=" + actorIds+
                 ", description='" + description + '\'' +
                 ", imgurl='" + imgurl + '\'' +

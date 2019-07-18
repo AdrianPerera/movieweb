@@ -52,12 +52,18 @@ MovieWeb Home Page  </p>${message}</p>
   <div id="Movies" class="tabcontent">
       <h3>_MOVIES_</h3>
       <p>This page has the CONTENT OF movies</p>
+      <p>${movieList}</p>
+
+
+
+
   </div>
 
 
   <div id="Actors" class="tabcontent">
     <h3>_ACTORS_</h3>
     <p>This page is about the actors</p>
+      <p>${actorList}</p>
   </div>
 
     <nav class="navbar navbar-fixed-bottom">

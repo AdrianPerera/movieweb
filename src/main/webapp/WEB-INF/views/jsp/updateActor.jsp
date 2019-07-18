@@ -31,6 +31,7 @@
   <div class="container">
         <form:form class="form-horizontal" method="post" modelAttribute="message" action="/movieweb/actor/edit">
            <form:input path="id" class="form-control" type="hidden"/></br>
+
            <div class="form-row">
             <div class="col-md-4 ">
                 <label class="col-sm-1 control-label">Name</label>

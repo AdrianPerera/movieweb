@@ -39,8 +39,8 @@
             <th>imgurl</th>
 
 
-            <td>  <button class="btn btn-primary" onclick="location.href='/movieweb/actor/actorForm'">GO BACK</button>
-            <td>  <button class="btn btn-dark" onclick="location.href='/movieweb/actor/home'">HOME</button>
+            <td>  <button class="btn btn-primary" onclick="location.href='/movieweb/movie/movieForm'">GO BACK</button>
+            <td>  <button class="btn btn-dark" onclick="location.href='/movieweb/movie/home'">HOME</button>
             </td>
         </tr>
         </thead class="thead-dark">
@@ -49,7 +49,7 @@
                         <td>${movies._id}</td>
                         <td>${movies.name}</td>
                         <td>${movies.year}</td>
-                        <td>${movies.genere}</td>
+                        <td>${movies.genre}</td>
                         <td>${movies.description}</td>
                         <td>${movies.imgurl}</td>
                          <td>
@@ -63,8 +63,8 @@
 
                         <td>
 
-                            <button class="btn btn-danger" onclick="location.href='/movieweb/actor/delete-actor?id=${mes._id}'">Delete</button>
-                            <button class="btn btn-secondary" onclick="location.href='/movieweb/actor/update-actor?id=${mes._id}'">Edit</button>
+                            <button class="btn btn-danger" onclick="location.href='/movieweb/movie/delete-movie?id=${movies._id}'">Delete</button>
+                            <button class="btn btn-secondary" onclick="location.href='/movieweb/movie/update-movie?id=${movies._id}'">Edit</button>
 
                         </td>
                 </tr>

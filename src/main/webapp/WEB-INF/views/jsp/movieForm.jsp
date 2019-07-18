@@ -39,7 +39,7 @@
                      <form:input path="year" class="form-control" type="integer" placeholder="1996"/></br>
                 </div>
                 <div>
-                    <label class="col-sm-1 control-label">Genere</label>
+                    <label class="col-sm-1 control-label">Genre</label>
                     <form:input path="genre" class="form-control" type="text"/></br>
                 </div>
 

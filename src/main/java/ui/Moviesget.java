@@ -8,7 +8,7 @@ public class Moviesget{
     private String _id;
     private String name;
     private int year;
-    private String genere;
+    private String genre;
     private List<Actor> actors;
     private String description;
     private String imgurl;
@@ -37,12 +37,12 @@ public class Moviesget{
         this.year = year;
     }
 
-    public String getGenere() {
-        return genere;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGenere(String genere) {
-        this.genere = genere;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
     public String getDescription() {
