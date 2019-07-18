@@ -25,6 +25,7 @@
 </head>
 
 <body>
+<h1><center>MOVIE FORM</center></h1>
 
     <div class="container">
         <form:form class="form-horizontal" method="post" modelAttribute="movie" action="/movieweb/movie/add">
@@ -42,6 +43,18 @@
                     <form:input path="genre" class="form-control" type="text"/></br>
                 </div>
 
+                <div>
+                       <label class="col-sm-1 control-label">Actors</label>
+                       <form:select path="actorIds" id="lstActors"  multiple="multiple">
+
+                                        <c:forEach items="${actorList}" var="actor">
+                                            <option value="${actor._id}">
+                                                ${actor.name}
+                                            </option>
+                                        </c:forEach>
+                                </form:select>
+
+                <div>
 
                 <div>
                     <label class="col-sm-1 control-label">description</label>
@@ -63,7 +76,6 @@
 
     </div>
 
-<p>${actorList}</p>
 
 <spring:url value="/resources/core.js/hello.js" var="coreJs" />
 <spring:url value="/resources/core.js/bootstrap.min.js" var="bootstrapJs" />

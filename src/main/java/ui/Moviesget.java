@@ -1,16 +1,15 @@
-package domain;
+package ui;
 
-
-import java.util.ArrayList;
+import domain.Actor;
 import java.util.List;
 
-public class Movie{
+public class Moviesget{
 
     private String _id;
     private String name;
     private int year;
     private String genere;
-    private List<String> actorIds;
+    private List<Actor> actors;
     private String description;
     private String imgurl;
 
@@ -46,14 +45,6 @@ public class Movie{
         this.genere = genere;
     }
 
-    public List<String> getActorIds() {
-        return actorIds;
-    }
-
-    public void setActorIds(List<String> actorIds) {
-        this.actorIds = actorIds;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -70,17 +61,12 @@ public class Movie{
         this.imgurl = imgurl;
     }
 
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "_id='" + _id + '\'' +
-                ", name='" + name + '\'' +
-                ", year=" + year +
-                ", genere='" + genere + '\'' +
-                ", actorsnames=" + actorIds+
-                ", description='" + description + '\'' +
-                ", imgurl='" + imgurl + '\'' +
-                '}';
+    public List<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(List<Actor> actors) {
+        this.actors = actors;
     }
 }
 

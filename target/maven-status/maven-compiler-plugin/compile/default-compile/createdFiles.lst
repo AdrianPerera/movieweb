@@ -1,6 +1,7 @@
+ui/MovieBean.class
+io/web/controller/ActorsController.class
+ui/Moviesget.class
 domain/Actor.class
 io/web/controller/MoviesController.class
 domain/Movie.class
-ui/MovieBean.class
 ui/ActorBean.class
-io/web/controller/ActorsController.class

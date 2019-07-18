@@ -1,6 +1,7 @@
-/home/adrin/projects/self_java/movieWeb/src/main/java/domain/Movie.java
-/home/adrin/projects/self_java/movieWeb/src/main/java/ui/MovieBean.java
-/home/adrin/projects/self_java/movieWeb/src/main/java/io/web/controller/ActorsController.java
-/home/adrin/projects/self_java/movieWeb/src/main/java/io/web/controller/MoviesController.java
-/home/adrin/projects/self_java/movieWeb/src/main/java/ui/ActorBean.java
-/home/adrin/projects/self_java/movieWeb/src/main/java/domain/Actor.java
+/home/adrin/projects/movieweb/src/main/java/io/web/controller/MoviesController.java
+/home/adrin/projects/movieweb/src/main/java/io/web/controller/ActorsController.java
+/home/adrin/projects/movieweb/src/main/java/ui/Moviesget.java
+/home/adrin/projects/movieweb/src/main/java/ui/MovieBean.java
+/home/adrin/projects/movieweb/src/main/java/domain/Actor.java
+/home/adrin/projects/movieweb/src/main/java/ui/ActorBean.java
+/home/adrin/projects/movieweb/src/main/java/domain/Movie.java

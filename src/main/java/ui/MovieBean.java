@@ -3,7 +3,7 @@ package ui;
 
 public class MovieBean {
 
-    private String _id;
+//    private String _id;
     private String name;
     private int year;
     private String genre;
@@ -11,13 +11,13 @@ public class MovieBean {
     private String description;
     private String imgurl;
 
-    public String get_id() {
-        return _id;
-    }
-
-    public void set_id(String _id) {
-        this._id = _id;
-    }
+//    public String get_id() {
+//        return _id;
+//    }
+//
+//    public void set_id(String _id) {
+//        this._id = _id;
+//    }
 
     public String getName() {
         return name;

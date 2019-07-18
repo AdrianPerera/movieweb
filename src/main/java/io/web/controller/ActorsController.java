@@ -46,7 +46,7 @@ public class ActorsController {
         Actor[] s1 = restTemplate.getForObject("http://localhost:8081/actor/", Actor[].class);
 
         model.addAttribute("message", s1);
-        return "show";
+        return "showactor";
 
     }
 
@@ -59,7 +59,7 @@ public class ActorsController {
         Actor[] s1 = restTemplate.getForObject("http://localhost:8081/actor/", Actor[].class); //calling getall
 
         model.addAttribute("message", s1);
-        return "show";
+        return "showactor";
     }
 
     @RequestMapping(value = "update-actor", method = RequestMethod.GET)
@@ -93,7 +93,7 @@ public class ActorsController {
         Actor[] s1 = restTemplate.getForObject("http://localhost:8081/actor/", Actor[].class);
 
         model.addAttribute("message", s1);
-        return "show";
+        return "showactor";
 
     }
 
