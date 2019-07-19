@@ -143,6 +143,14 @@ public class MoviesController {
     }
 
 
+    @RequestMapping(value="/show",method=RequestMethod.GET)
+    public String show(Model model){
+
+        Moviesget[] s1 = restTemplate.getForObject("http://localhost:8081/movie/", Moviesget[].class); //calling getall
+
+        model.addAttribute("listMovies", s1);  //showmovies is expecting a listMovies model
+        return "showmovies";
+    }
 
 }
 

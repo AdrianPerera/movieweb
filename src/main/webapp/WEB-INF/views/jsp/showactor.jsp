@@ -31,7 +31,7 @@
             <th>DOB</th>
             <th>Details</th>
             <td>  <button class="btn btn-primary" onclick="location.href='/movieweb/actor/actorForm'">GO BACK</button>
-            <td>  <button class="btn btn-dark" onclick="location.href='/movieweb/actor/home'">HOME</button>
+            <td>  <button class="btn btn-dark" onclick="location.href='/movieweb/movie/home'">HOME</button>
             </td>
         </tr>
         </thead class="thead-dark">

@@ -20,11 +20,6 @@
 
 <h><center>View Movie</center></h>
 
-<p>${message}</p>
-<p>${movies}</p>
-<p>${movies.actors}</p>
-
-
 <div class="container">
 
         <table class="table table-striped">

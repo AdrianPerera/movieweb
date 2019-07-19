@@ -20,39 +20,32 @@
 
 <h><center>View Movie</center></h>
 
-<p>${message}</p>
-<p>${movies}</p>
-<p>${movies.actors}</p>
-
-
 <div class="container">
 
         <table class="table table-striped">
         <thead>
         <tr>
 
-            <th>ID</th>
             <th>Name</th>
             <th>Year</th>
             <th>Genre</th>
             <th>Description</th>
-            <th>imgurl</th>
+            <th>Actors</th>
 
 
-            <td>  <button class="btn btn-primary" onclick="location.href='/movieweb/movie/movieForm'">GO BACK</button>
-            <td>  <button class="btn btn-dark" onclick="location.href='/movieweb/movie/home'">HOME</button>
-            </td>
+            <td>  <button class="btn btn-primary" onclick="location.href='/movieweb/movie/movieForm'">GO BACK</button></td>
+            <td>  <button class="btn btn-dark" onclick="location.href='/movieweb/movie/home'">HOME</button></td>
+
         </tr>
-        </thead class="thead-dark">
+        </thead>
                  <c:forEach items="${listMovies}" var="movieList">
                 <tr>
-                        <td>${movieList._id}</td>
+
                         <td>${movieList.name}</td>
                         <td>${movieList.year}</td>
                         <td>${movieList.genre}</td>
                         <td>${movieList.description}</td>
-                        <td>${movieList.imgurl}</td>
-                         <td>
+                        <td>
                             <c:forEach var="emp" items="${movieList.actors}">
 
                                         <li>${emp.name}</li>

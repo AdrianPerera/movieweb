@@ -7,78 +7,122 @@
 <html>
 
 <head>
-
-<spring:url value="/resources/core.css/hello.css" var="coreCss" />
-<spring:url value="/resources/core.css/bootstrap.min.css" var="bootstrapCss" />
-<link href="${bootstrapCss}" rel="stylesheet" />
-<link href="${coreCss}" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 
-<h1><b>
-MovieWeb Home Page  </p>${message}</p>
-</b></h1>
+
+
+<center><h1><b>  MovieWeb Home Page </b></h1></center>
 
 </head>
 
     <body>
 
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
 
-               <div class="tab">
+        <div class="container">
+          <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li class="active"><a href="#movies"> <h5>MOVIES</h5></a></li>
+            <li><a href="#actors"> <h5>ACTORS</h5></a></li>
 
-                     <button class="tablinks" onclick="openCity(event, 'Movies')">MOVIES</button>
-                     <button class="tablinks" onclick="openCity(event, 'Actors')">ACTORS</button>
-               </div>
+          </ul>
 
 
-               <form class="navbar-form navbar-right" role="search">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+          <div class="tab-content">
+            <div id="movies" class="tab-pane fade in active">
+              <h3>Movies</h3>
+              <p></p>
+                <div class="container">
+                    <div class="row">
+                        <c:forEach items="${movieList}" var="movieList">
+                            <div class="col-md-4 sm-4" >
+                                <div class="well well-sm">
+                                     <table align="center">
+                                          <tr>
+                                               <td colspan="2">
+                                                <a href="/movieweb/movie/show">
+                                                <img src="${movieList.imgurl}" alt="Responsive image" class="img-rounded"  style="width:200px; height:300px;border:3;">
+                                                </a>
+                                               </td>
+                                          </tr>
+                                          <tr>
+                                            <td> Movie:</td>
+                                            <td>${movieList.name}</td>
+                                         </tr>
+                                         <tr>
+                                            <td> Released Year:</td>
+                                            <td>${movieList.year}</td>
+                                         </tr>
+                                         <tr>
+                                            <td> Genre:</td>
+                                            <td>${movieList.genre}</td>
+                                         </tr>
+                                     </table>
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="actors" class="tab-pane fade">
+              <h3>Actors</h3>
+                <div class="container">
+                      <div class="row">
+                           <c:forEach items="${actorList}" var="act">
+                                  <div class="col-md-4 sm-4">
+                                       <div class="well well-sm">
+                                           <table align="center">
+                                               <tr>
+                                                    <td colspan="2">
+                                                       <a href="/movieweb/movie/show">
+                                                        <img src="${act.details}" alt="Responsive image" class="img-rounded" style="width:200px;height:200px;border:3;">
+                                                       </a>
+                                                    </td>
+                                                </tr>
+                                               <tr>
+                                                  <td>Actor:</td>
+                                                  <td>${act.name}</td>
+                                               </tr>
+                                           </table>
+                                      </div>
+                                  </div>
+                            </c:forEach>
+                      </div>
                   </div>
-                    <button type="submit" class="btn btn-default">SEARCH</button>
-               </form>
 
-            </div><!-- /.navbar-collapse -->
+            </div>
 
-          </div><!-- /.container-fluid -->
-
-        </nav>
+          </div>
+        </div>
 
 
 
-
-  <div id="Movies" class="tabcontent">
-      <h3>_MOVIES_</h3>
-      <p>This page has the CONTENT OF movies</p>
-      <p>${movieList}</p>
-
-
-
-
-  </div>
-
-
-  <div id="Actors" class="tabcontent">
-    <h3>_ACTORS_</h3>
-    <p>This page is about the actors</p>
-      <p>${actorList}</p>
-  </div>
-
+<footer class="container-fluid text-center">
     <nav class="navbar navbar-fixed-bottom">
-         <div class="container-fluid">
+         <div class="container">
                 <button class="btn btn-primary" onclick="location.href='/movieweb/movie/movieForm'">ADD MOVIES</button>
                 <button class="btn btn-primary" onclick="location.href='/movieweb/actor/actorForm'">ADD ACTORS</button>
          </div>
     </nav>
 
+</footer>
+    <spring:url value="/resources/core.js/hello.js" var="coreJs" />
+    <spring:url value="/resources/core.js/bootstrap.min.js" var="bootstrapJs" />
+    <script src="${coreJs}"></script>
+    <script src="${bootstrapJs}"></script>
 
-<spring:url value="/resources/core.js/hello.js" var="coreJs" />
-<spring:url value="/resources/core.js/bootstrap.min.js" var="bootstrapJs" />
-<script src="${coreJs}"></script>
-<script src="${bootstrapJs}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+      $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+      });
+    });
+    </script>
 
 
 </body>

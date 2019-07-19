@@ -30,18 +30,18 @@ public class ActorsController {
 //        this.movieFacade = movieFacade;
 //    }
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public String gotoHome(ModelMap model) {
-        String s1 = "This is sent by the ActorsController";
-
-        Actor[] L1 = restTemplate.getForObject("http://localhost:8081/actor/",Actor[].class);
-        model.addAttribute("actorList",L1);
-//        model.addAttribute("movieList",movieFacade.getMovies());
-        Moviesget[] L2 = restTemplate.getForObject("http://localhost:8081/actor/", Moviesget[].class);
-        model.addAttribute("movieList",L2);
-        model.addAttribute("message", s1);
-        return "home";                //returns to the home page
-    }
+//    @RequestMapping(value = "/home", method = RequestMethod.GET)
+//    public String gotoActorHome(ModelMap model) {
+//        String s1 = "This is sent by the ActorsController";
+//
+//        Actor[] L1 = restTemplate.getForObject("http://localhost:8081/actor/",Actor[].class);
+//        model.addAttribute("actorList",L1);
+////        model.addAttribute("movieList",movieFacade.getMovies());
+//        Moviesget[] L2= restTemplate.getForObject("http://localhost:8081/actor/",Moviesget[].class);
+//        model.addAttribute("movieList",L2);
+//        model.addAttribute("message", s1);
+//        return "home";                //returns to the home page
+//    }
 
 
     @RequestMapping(value = "/actorForm", method = RequestMethod.GET)
